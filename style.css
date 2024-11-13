@@ -1,96 +1,156 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+body { min-height: 100dvh; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+input, button, textarea, select{ font: inherit; }
+img, picture, svg, video, canvas{ max-width: 100%; height: auto; display: block; }
+p { text-wrap: pretty }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+a:link, a:visited, a:hover, a:active { text-decoration: none; }
+legend {
+    display: table;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    + * {
+        clear: both;
+    }
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+fieldset {
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
 }
-a:hover {
-  color: #535bf2;
+body:not(:-moz-handler-blocked) fieldset { display: table-cell; }
+@media (prefers-reduced-motion: reduce){
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
 }
-
-body {
-  margin: 0;
+.icon {
+  min-width: 24px;
+  min-height: 24px;
+}
+.body {
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+}
+.header {
+  width: 100vw;
+  height: 64px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f6fafd;
+}
+.header_left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.menu-icon {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  border-radius: 100%;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.menu-icon:hover {
+  background-color: #dadada;
+  border-radius: 100%;
+}
+.contacts-icon {
+  width: 35px;
+  height: 35px;
+  padding: 7px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.contacts-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.contacts-text {
+  padding: 3px;
+  padding-left: 5px;
+  font-family: "Georama", sans-serif;
+  font-weight: 400;
+  color: #756d6b;
 }
 
-.read-the-docs {
-  color: #888;
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color:#f2f3f5;
+  border-radius: 10px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.search-bar:focus-within {
+  background-color: #ffffff;
+  box-shadow: 2px 2px 10px #756d6b;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.search-bar svg {
+  padding: 8px;
+  margin: 5px;
+  margin-right: 0px;
+}
+
+.search-bar svg:hover {
+  background-color: #dadada;
+  border-radius: 100%;
+}
+
+.search-bar input {
+  -webkit-appearance: none;
+  -moz-appearance: none;    
+  appearance: none;         
+  border: none;             
+  outline: none;            
+  background: none;
+  border-style: none;
+  width: 605px;
+  background-color: #f2f3f5;
+}
+
+.search-icon {
+  color: #756d6b;
+}
+
+.search-bar input:focus {
+  background-color: #ffffff;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+}
+
+.interrogation-icon {
+  padding-top: 1.5px;
+  color: #756d6b;
+  border: solid 3px #756d6b;
+  border-radius: 100%;
+}
+
+.settings-icon {
+  color: #756d6b;
+}
+
+.dots-icon {
+  color: #756d6b;
 }
